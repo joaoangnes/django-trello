@@ -44,26 +44,26 @@ python3 -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate
 ```
 
-**3. Install the dependencies:**:
+**3. Install the dependencies:**
 
 ```sh
 pip install -r requirements.txt
 ```
 
-**4. Apply the migrations::**:
+**4. Apply the migrations:**
 
 ```sh
 cd task_manager
 python3 manage.py migrate
 ```
 
-**5 Create a superuser (optional, for accessing the admin interface):**:
+**5 Create a superuser (optional, for accessing the admin interface):**
 
 ```sh
 python3 manage.py createsuperuser
 ```
 
-**6 Run the development server:**:
+**6 Run the development server**:
 
 ```sh
 python3 manage.py runserver

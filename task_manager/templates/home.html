@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="jumbotron text-center">
+        <h1 class="display-3">Bem-vindo ao Sistema de Gerenciamento de Tarefas</h1>
+        <hr class="my-4">
+        {% if user.is_authenticated %}
+            <p class="lead">Acesse suas tarefas e comece a gerenciar seu tempo agora mesmo.</p>
+            <a class="btn btn-primary btn-lg" href="{% url 'task_list' %}" role="button">Minhas Tarefas</a>
+            <form method="POST" action="{% url 'logout' %}" class="d-inline">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-lg" style="margin-left: 10px;">Logout</button>
+            </form>
+        {% else %}
+            <p class="lead">Faça login ou registre-se para começar a usar o sistema.</p>
+            <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Login</a>
+            <a class="btn btn-success btn-lg" href="{% url 'register' %}" role="button" style="margin-left: 10px;">Registrar</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
